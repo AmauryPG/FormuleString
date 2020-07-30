@@ -5,10 +5,18 @@
 *.user
 *.filters
 *.vcxproj
+*.sln
 
 # Packages #
 ############
+.ipch
 
 # Logs and databases #
 ######################
+*.db
 
+# Executable #
+######################
+*.exe
+*.ilk
+*.pdb
