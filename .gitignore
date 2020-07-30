@@ -1,0 +1,14 @@
+# Compiled source #
+###################
+*.opendb
+*.suo
+*.user
+*.filters
+*.vcxproj
+
+# Packages #
+############
+
+# Logs and databases #
+######################
+
