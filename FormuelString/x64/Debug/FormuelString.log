@@ -1,2 +1,4 @@
-﻿  main.cpp
+﻿  FormuleString.cpp
+c:\users\amaury\source\github\formulestring\formuelstring\formulestring.cpp(84): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+c:\users\amaury\source\github\formulestring\formuelstring\formulestring.cpp(77): warning C4715: 'FormuleString::partitionCalcule' : les chemins de contrôle ne retournent pas tous une valeur
   FormuelString.vcxproj -> C:\Users\Amaury\source\Github\FormuleString\x64\Debug\FormuelString.exe
