@@ -24,6 +24,6 @@ private:
 	//
 	//cette fonction change partitionsFormule et metaDonneFormule
 	void partitionFormule(string formule);
-	double partitionCalcule(string valeur1, string operation, string valeur2);
+	double partitionCalcule(double valeur1, string operation, string valeur2);
 };
 

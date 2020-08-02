@@ -27,52 +27,39 @@ double FormuleString::polynomialCalcule(string formule, double x)
 			return 0;
 		}
 
-		for (int i = 0; i < longueurPartitions; i += 3)
+		for (int i = 1; i < longueurPartitions - 1; i++)
 		{
-			if (metaDonneFormule[i + 1] == etatMetaDonne::operation)
+			if (metaDonneFormule[i] == etatMetaDonne::operation && 
+				(metaDonneFormule[i + 1] == etatMetaDonne::nombre || metaDonneFormule[i + 1] == etatMetaDonne::variableX))
 			{
-				if (metaDonneFormule[i] == etatMetaDonne::variableX)
+				if (metaDonneFormule[i + 1] == etatMetaDonne::nombre)
 				{
-					valeur1 = to_string(x);
+					retour = partitionCalcule(retour, partitionsFormule[i], partitionsFormule[i + 1]);
 				}
-				else if (metaDonneFormule[i] == etatMetaDonne::nombre)
+				else
 				{
-					valeur1 = partitionsFormule[i];
+					retour = partitionCalcule(retour, partitionsFormule[i], to_string(x));
 				}
-
-				if (metaDonneFormule[i + 2] == etatMetaDonne::variableX)
-				{
-					valeur2 = to_string(x);
-				}
-				else if (metaDonneFormule[i + 2] == etatMetaDonne::nombre)
-				{
-					valeur2 = partitionsFormule[i];
-				}
-
-				cout << valeur1 << endl;
-				cout << partitionsFormule[i + 1] << endl;
-				cout << valeur2 << endl;
-				retour = partitionCalcule(valeur1, partitionsFormule[i + 1], valeur2);
 			}
 		}
 	}
 	catch (const std::exception&)
 	{
-		cout << "ERREUR : FORMULE N'EST PAS BIEN ÉCRITE" << endl;
+		cout << "ERREUR : FORMULE N'EST PAS BIEN ECRITE" << endl;
 	}
 
 	return retour;
 }
 
-double FormuleString::partitionCalcule(string valeur1, string operation, string valeur2)
+double FormuleString::partitionCalcule(double valeur1, string operation, string valeur2)
 {
 	if (operation == "+")
 	{
-		return stod(valeur1) + stod(valeur2);
+		return valeur1 + stod(valeur2);
 	}
 	else if (operation == "-")
 	{
-		return stod(valeur1) - stod(valeur2);
+		return valeur1 - stod(valeur2);
 	}
 }
 
