@@ -61,6 +61,18 @@ double FormuleString::partitionCalcule(double valeur1, string operation, string 
 	{
 		return valeur1 - stod(valeur2);
 	}
+	else if (operation == "*")
+	{
+		return valeur1 * stod(valeur2);
+	}
+	else if (operation == "/")
+	{
+		return valeur1 / stod(valeur2);
+	}
+	else if (operation == "^")
+	{
+		return pow(valeur1, stod(valeur2));
+	}
 }
 
 void FormuleString::partitionFormule(string formule)

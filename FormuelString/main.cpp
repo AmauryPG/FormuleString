@@ -6,6 +6,6 @@ int main()
 {
 	FormuleString fs;
 
-	cout << fs.polynomialCalcule("400+x-50", 1010) << endl;
+	cout << fs.polynomialCalcule("2^2", 1010) << endl;
 
 }
