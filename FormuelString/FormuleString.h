@@ -21,7 +21,6 @@ private:
 		variableX = 3
 	};
 
-	//
 	//cette fonction change partitionsFormule et metaDonneFormule
 	void partitionFormule(string formule);
 	double partitionCalcule(double valeur1, string operation, string valeur2);
